@@ -4,11 +4,11 @@ function SuppFigure3A(flyResp,stimulusInfo,general_parameters)
 % humans. margarida.agrochao@yale.edu
 
 % The input flyResp has dimensions (number of cell types x number of flies
-% in dataset). Rows of flyResp are as follows: 1-T4P responses, 2-T4R
-% responses, 3-T5P responses, 4-T5R responses. Empty cells in flyResp mean
+% in dataset). Rows of flyResp are as follows: 1-T4a responses, 2-T4b
+% responses, 3-T5a responses, 4-T5b responses. Empty cells in flyResp mean
 % that no responses of a given cell type were recorded.
 
-cellTypes={'T4P','T4R','T5P','T5R'};
+cellTypes={'T4a','T4b','T5a','T5b'};
 output.analysis=cell(1,length(cellTypes));
 for k=1:length(cellTypes)
     nonResponsiveFlies = cellfun('isempty', flyResp(k, :));
@@ -32,7 +32,7 @@ for k=1:length(cellTypes)
 end
 
 stimuli={'-0 Edge','-0 Edge','-0 Edge','-0 Edge'};
-cellTypes={'T4P','T4R','T5P','T5R'};
+cellTypes={'T4a','T4b','T5a','T5b'};
 setLims(cellTypes,stimuli)
 
 MakeFigure('Name','SuppFigure 3A','NumberTitle','off');
@@ -42,31 +42,31 @@ numPhases=max(cell2mat(cellfun(@(x) max(x),numPhases,'UniformOutput',false)))+1;
 barWidth=stimulusInfo.params{1}(46).barWd;
 
 s1 = subplot(2,12,1); % stimulus black gray
-s2 = subplot(2,12,2); % T4P response xt plot
-s3 = subplot(2,12,3); % T4P response time averaged
+s2 = subplot(2,12,2); % T4a response xt plot
+s3 = subplot(2,12,3); % T4a response time averaged
 s4 = subplot(2,12,4); % stimulus black gray
-s5 = subplot(2,12,5); % T4R response xt plot
-s6 = subplot(2,12,6); % T4R response time averaged
+s5 = subplot(2,12,5); % T4b response xt plot
+s6 = subplot(2,12,6); % T4b response time averaged
 s7 = subplot(2,12,7); % stimulus white gray
-s8 = subplot(2,12,8); % T4P response xt plot
-s9 = subplot(2,12,9); % T4P response time averaged
+s8 = subplot(2,12,8); % T4a response xt plot
+s9 = subplot(2,12,9); % T4a response time averaged
 s10 = subplot(2,12,10); % stimulus white gray
-s11 = subplot(2,12,11); % T4R response xt plot
-s12 = subplot(2,12,12); % T4R response time averaged
+s11 = subplot(2,12,11); % T4b response xt plot
+s12 = subplot(2,12,12); % T4b response time averaged
 s13 = subplot(2,12,13); % stimulus black gray
-s14 = subplot(2,12,14); % T5P response xt plot
-s15 = subplot(2,12,15); % T5P response time averaged
+s14 = subplot(2,12,14); % T5a response xt plot
+s15 = subplot(2,12,15); % T5a response time averaged
 s16 = subplot(2,12,16); % stimulus black gray
-s17 = subplot(2,12,17); % T5R response xt plot
-s18 = subplot(2,12,18); % T5R response time averaged
+s17 = subplot(2,12,17); % T5b response xt plot
+s18 = subplot(2,12,18); % T5b response time averaged
 s19 = subplot(2,12,19); % stimulus white gray
-s20 = subplot(2,12,20); % T5P response xt plot
-s21 = subplot(2,12,21); % T5P response time averaged
+s20 = subplot(2,12,20); % T5a response xt plot
+s21 = subplot(2,12,21); % T5a response time averaged
 s22 = subplot(2,12,22); % stimulus white gray
-s23 = subplot(2,12,23); % T5R response xt plot
-s24 = subplot(2,12,24); % T5R response time averaged
+s23 = subplot(2,12,23); % T5b response xt plot
+s24 = subplot(2,12,24); % T5b response time averaged
 
-curr=findobj('type','figure','Name','Edges T4P');
+curr=findobj('type','figure','Name','Edges T4a');
 all_ax_fig1 = findall(curr,'type','axes'); % get handle to axes of figure
 all_children_ax_fig1 = get(all_ax_fig1,'children'); %get handle to all the children in the figure
 
@@ -83,13 +83,13 @@ title(s1,'stimulus','FontSize',12,'FontWeight','bold')
 copyobj(all_children_ax_fig1{9},s2); % T4 P GB xtplot
 s2.XLim=all_ax_fig1(9).XLim;
 s2.YLim=all_ax_fig1(9).YLim;
-s2.Colormap=all_ax_fig1(9).Colormap;
+colormap(s2,colormap(all_ax_fig1(9)));
 s2.YDir='reverse';
 s2.CLim=all_ax_fig1(9).CLim;
 s2.YTick=[];
 colorbar(s2);
 xlabel(s2,'time(s)')
-title(s2,'T4P','FontSize',12,'FontWeight','bold')
+title(s2,'T4a','FontSize',12,'FontWeight','bold')
 
 copyobj(all_children_ax_fig1{3},s4); % T4 P GW stim
 s4.XLim=all_ax_fig1(3).XLim;
@@ -103,15 +103,15 @@ title(s4,'stimulus','FontSize',12,'FontWeight','bold')
 copyobj(all_children_ax_fig1{8},s5); % T4 P GW xt plot
 s5.XLim=all_ax_fig1(8).XLim;
 s5.YLim=all_ax_fig1(8).YLim;
-s5.Colormap=all_ax_fig1(8).Colormap;
+colormap(s5,colormap(all_ax_fig1(8)));
 s5.YDir='reverse';
 s5.CLim=all_ax_fig1(8).CLim;
 s5.YTick=[];
 colorbar(s5);
 xlabel(s5,'time(s)')
-title(s5,'T4P','FontSize',12,'FontWeight','bold')
+title(s5,'T4a','FontSize',12,'FontWeight','bold')
 
-curr=findobj('type','figure','Name','Edges T4R');
+curr=findobj('type','figure','Name','Edges T4b');
 all_ax_fig1 = findall(curr,'type','axes'); % get handle to axes of figure
 all_children_ax_fig1 = get(all_ax_fig1,'children'); %get handle to all the children in the figure
 
@@ -127,13 +127,13 @@ title(s7,'stimulus','FontSize',12,'FontWeight','bold')
 copyobj(all_children_ax_fig1{9},s8); % T4 R GB xtplot
 s8.XLim=all_ax_fig1(9).XLim;
 s8.YLim=all_ax_fig1(9).YLim;
-s8.Colormap=all_ax_fig1(9).Colormap;
+colormap(s8,colormap(all_ax_fig1(9)));
 s8.YDir='reverse';
 s8.CLim=all_ax_fig1(9).CLim;
 s8.YTick=[];
 colorbar(s8);
 xlabel(s8,'time(s)')
-title(s8,'T4R','FontSize',12,'FontWeight','bold')
+title(s8,'T4b','FontSize',12,'FontWeight','bold')
 
 copyobj(all_children_ax_fig1{3},s10); % T4 R GW stim
 s10.XLim=all_ax_fig1(3).XLim;
@@ -147,15 +147,15 @@ title(s10,'stimulus','FontSize',12,'FontWeight','bold')
 copyobj(all_children_ax_fig1{8},s11); % T4 P GW xt plot
 s11.XLim=all_ax_fig1(8).XLim;
 s11.YLim=all_ax_fig1(8).YLim;
-s11.Colormap=all_ax_fig1(8).Colormap;
+colormap(s11,colormap(all_ax_fig1(8)));
 s11.YDir='reverse';
 s11.CLim=all_ax_fig1(8).CLim;
 s11.YTick=[];
 colorbar(s11);
 xlabel(s11,'time(s)')
-title(s11,'T4R','FontSize',12,'FontWeight','bold')
+title(s11,'T4b','FontSize',12,'FontWeight','bold')
 
-curr=findobj('type','figure','Name','Edges T5P');
+curr=findobj('type','figure','Name','Edges T5a');
 all_ax_fig1 = findall(curr,'type','axes'); % get handle to axes of figure
 all_children_ax_fig1 = get(all_ax_fig1,'children'); %get handle to all the children in the figure
 
@@ -172,13 +172,13 @@ title(s13,'stimulus','FontSize',12,'FontWeight','bold')
 copyobj(all_children_ax_fig1{8},s14); % T5 P GB xtplot
 s14.XLim=all_ax_fig1(8).XLim;
 s14.YLim=all_ax_fig1(8).YLim;
-s14.Colormap=all_ax_fig1().Colormap;
+colormap(s14,colormap(all_ax_fig1(8)));
 s14.YDir='reverse';
 s14.CLim=all_ax_fig1(8).CLim;
 s14.YTick=[];
 colorbar(s14);
 xlabel(s14,'time(s)')
-title(s14,'T5P','FontSize',12,'FontWeight','bold')
+title(s14,'T5a','FontSize',12,'FontWeight','bold')
 
 copyobj(all_children_ax_fig1{4},s16); % T5 P GW stim
 s16.XLim=all_ax_fig1(4).XLim;
@@ -192,15 +192,15 @@ title(s16,'stimulus','FontSize',12,'FontWeight','bold')
 copyobj(all_children_ax_fig1{9},s17); % T5 P GW xt plot
 s17.XLim=all_ax_fig1(9).XLim;
 s17.YLim=all_ax_fig1().YLim;
-s17.Colormap=all_ax_fig1(9).Colormap;
+colormap(s17,colormap(all_ax_fig1(9)));
 s17.YDir='reverse';
 s17.CLim=all_ax_fig1(9).CLim;
 s17.YTick=[];
 colorbar(s17);
 xlabel(s17,'time(s)')
-title(s17,'T5P','FontSize',12,'FontWeight','bold')
+title(s17,'T5a','FontSize',12,'FontWeight','bold')
 
-curr=findobj('type','figure','Name','Edges T5R');
+curr=findobj('type','figure','Name','Edges T5b');
 all_ax_fig1 = findall(curr,'type','axes'); % get handle to axes of figure
 all_children_ax_fig1 = get(all_ax_fig1,'children'); %get handle to all the children in the figure
 
@@ -216,13 +216,13 @@ title(s19,'stimulus','FontSize',12,'FontWeight','bold')
 copyobj(all_children_ax_fig1{8},s20); % T5 R GB xtplot
 s20.XLim=all_ax_fig1(8).XLim;
 s20.YLim=all_ax_fig1(8).YLim;
-s20.Colormap=all_ax_fig1(8).Colormap;
+colormap(s20,colormap(all_ax_fig1(8)));
 s20.YDir='reverse';
 s20.CLim=all_ax_fig1(9).CLim;
 s20.YTick=[];
 colorbar(s20);
 xlabel(s20,'time(s)')
-title(s20,'T5R','FontSize',12,'FontWeight','bold')
+title(s20,'T5b','FontSize',12,'FontWeight','bold')
 
 copyobj(all_children_ax_fig1{4},s22); % T5 R GW stim
 s22.XLim=all_ax_fig1(4).XLim;
@@ -236,16 +236,16 @@ title(s22,'stimulus','FontSize',12,'FontWeight','bold')
 copyobj(all_children_ax_fig1{9},s23); % T5 R GW xt plot
 s23.XLim=all_ax_fig1(9).XLim;
 s23.YLim=all_ax_fig1(9).YLim;
-s23.Colormap=all_ax_fig1(8).Colormap;
+colormap(s23,colormap(all_ax_fig1(8)));
 s23.YDir='reverse';
 s23.CLim=all_ax_fig1(9).CLim;
 s23.YTick=[];
 colorbar(s23);
 xlabel(s23,'time(s)')
-title(s23,'T5R','FontSize',12,'FontWeight','bold')
+title(s23,'T5b','FontSize',12,'FontWeight','bold')
 
 
-curr=findobj('type','figure','Name','Edges time avg T4P');
+curr=findobj('type','figure','Name','Edges time avg T4a');
 all_ax_fig5 = findall(curr,'type','axes'); % get handle to axes of figure
 all_children_ax_fig5 = get(all_ax_fig5,'children'); %get handle to all the children in the figure
 
@@ -273,7 +273,7 @@ s6.XTick=[];
 box(s6,'off')
 ylabel(s6,'^{\Delta f}/_{f}')
 
-curr=findobj('type','figure','Name','Edges time avg T4R');
+curr=findobj('type','figure','Name','Edges time avg T4b');
 all_ax_fig5 = findall(curr,'type','axes'); % get handle to axes of figure
 all_children_ax_fig5 = get(all_ax_fig5,'children'); %get handle to all the children in the figure
 
@@ -303,7 +303,7 @@ ylabel(s12,'^{\Delta f}/_{f}')
 
 
 
-curr=findobj('type','figure','Name','Edges time avg T5P');
+curr=findobj('type','figure','Name','Edges time avg T5a');
 all_ax_fig5 = findall(curr,'type','axes'); % get handle to axes of figure
 all_children_ax_fig5 = get(all_ax_fig5,'children'); %get handle to all the children in the figure
 
@@ -321,7 +321,7 @@ s18.XTick=[];
 view(s18,90, -90)
 ylabel(s18,'^{\Delta f}/_{f}')
 
-curr=findobj('type','figure','Name','Edges time avg T4P');
+curr=findobj('type','figure','Name','Edges time avg T4a');
 all_ax_fig5 = findall(curr,'type','axes'); % get handle to axes of figure
 all_children_ax_fig5 = get(all_ax_fig5,'children'); %get handle to all the children in the figure
 
@@ -349,7 +349,7 @@ s6.XTick=[];
 box(s6,'off')
 ylabel(s6,'^{\Delta f}/_{f}')
 
-curr=findobj('type','figure','Name','Edges time avg T4R');
+curr=findobj('type','figure','Name','Edges time avg T4b');
 all_ax_fig5 = findall(curr,'type','axes'); % get handle to axes of figure
 all_children_ax_fig5 = get(all_ax_fig5,'children'); %get handle to all the children in the figure
 
@@ -377,7 +377,7 @@ s12.XTick=[];
 box(s12,'off')
 ylabel(s12,'^{\Delta f}/_{f}')
 
-curr=findobj('type','figure','Name','Edges time avg T5P');
+curr=findobj('type','figure','Name','Edges time avg T5a');
 all_ax_fig5 = findall(curr,'type','axes'); % get handle to axes of figure
 all_children_ax_fig5 = get(all_ax_fig5,'children'); %get handle to all the children in the figure
 
@@ -405,7 +405,7 @@ s18.XTick=[];
 box(s18,'off')
 ylabel(s18,'^{\Delta f}/_{f}')
 
-curr=findobj('type','figure','Name','Edges time avg T5R');
+curr=findobj('type','figure','Name','Edges time avg T5b');
 all_ax_fig5 = findall(curr,'type','axes'); % get handle to axes of figure
 all_children_ax_fig5 = get(all_ax_fig5,'children'); %get handle to all the children in the figure
 

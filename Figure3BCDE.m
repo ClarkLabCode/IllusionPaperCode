@@ -4,11 +4,11 @@ function Figure3BCDE(flyResp,stimulusInfo,general_parameters)
 % humans. margarida.agrochao@yale.edu
 
 % The input flyResp has dimensions (number of cell types x number of flies
-% in dataset). Rows of flyResp are as follows: 1-T4P responses, 2-T4R
-% responses, 3-T5P responses, 4-T5R responses. Empty cells in flyResp mean
+% in dataset). Rows of flyResp are as follows: 1-T4a responses, 2-T4b
+% responses, 3-T5a responses, 4-T5b responses. Empty cells in flyResp mean
 % that no responses of a given cell type were recorded.
 
-cellTypes={'T4P','T4R','T5P','T5R'};
+cellTypes={'T4a','T4b','T5a','T5b'};
 output.analysis=cell(1,length(cellTypes));
 for k=1:length(cellTypes)
     nonResponsiveFlies = cellfun('isempty', flyResp(k, :));
