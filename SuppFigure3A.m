@@ -191,7 +191,7 @@ title(s16,'stimulus','FontSize',12,'FontWeight','bold')
 
 copyobj(all_children_ax_fig1{9},s17); % T5 P GW xt plot
 s17.XLim=all_ax_fig1(9).XLim;
-s17.YLim=all_ax_fig1().YLim;
+s17.YLim=all_ax_fig1(9).YLim;
 colormap(s17,colormap(all_ax_fig1(9)));
 s17.YDir='reverse';
 s17.CLim=all_ax_fig1(9).CLim;
