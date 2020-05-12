@@ -11,7 +11,9 @@ colsPerRow = 10;
 phasesPerBar = paramsPlot.barWd/paramsPlot.phaseShift;
 
 for ii = 1:2:length(varargin)
-    eval([varargin{ii} '= varargin{' num2str(ii+1) '};']);
+    if strmatch(varargin{ii},'repeatSection')
+        eval([varargin{ii} '= varargin{' num2str(ii+1) '};']);
+    end
 end
 
 numTimePoints = size(roiSummaryMatrix, 2);
