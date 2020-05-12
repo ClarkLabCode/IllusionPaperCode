@@ -75,9 +75,9 @@ s2 = subplot(1,3,2);
 s3 = subplot(1,3,3);
 
 curr=findobj('type','figure','Name','time trace');
-curr_ax = findall(curr(1),'type','axes'); % get handle to axes of figure
-curr_ax_child = get(curr_ax,'children'); %get handle to all the children in the figure
-copyobj(curr_ax_child,s1); %copy children to new parent axes i.e. the subplot axes
+curr_ax = findall(curr(1),'type','axes');
+curr_ax_child = get(curr_ax,'children');
+copyobj(curr_ax_child,s1);
 axis(s1,'tight')
 set(s1,'XTick',[0 2500 5000]);
 set(s1,'XTickLabel',[0 2.5 5]);
@@ -92,8 +92,8 @@ ylabel(s1,['turning (' char(176) '/s)'])
 title(s1,'time trace')
 
 curr=findobj('type','figure','Name','stim onset');
-curr_ax = findall(curr(1),'type','axes'); % get handle to axes of figure
-curr_ax_child = get(curr_ax,'children'); %get handle to all the children in the figure
+curr_ax = findall(curr(1),'type','axes');
+curr_ax_child = get(curr_ax,'children');
 copyobj(curr_ax_child,s2);
 ylim([0 10])
 set(s2,'YTick',[0 5 10]);
@@ -102,8 +102,8 @@ set(s2,'XColor','none')
 title(s2,'stim presentation')
 
 curr=findobj('type','figure','Name','stim offset');
-curr_ax = findall(curr(1),'type','axes'); % get handle to axes of figure
-curr_ax_child = get(curr_ax,'children'); %get handle to all the children in the figure
+curr_ax = findall(curr(1),'type','axes');
+curr_ax_child = get(curr_ax,'children');
 copyobj(curr_ax_child,s3);
 ylim([-11 0])
 set(s3,'YTick',[-10 -5 0]);

@@ -52,16 +52,16 @@ barPlotGenotypeCombo(bp_on,cellTypes,pairsToDoStats,figName{2})
 
 %% put everything in subplots 
 
-MakeFigure('Name','Figure 5D','NumberTitle','off'); %create new figure
-s1 = subplot(1,2,1); %create and get handle to the subplot axes
+MakeFigure('Name','Figure 5D','NumberTitle','off');
+s1 = subplot(1,2,1);
 s2 = subplot(1,2,2);
 
 curr=findobj('type','figure','Name','T5 silenced & ctrls-time trace');
-curr_ax = findall(curr(1),'type','axes'); % get handle to axes of figure
-curr_ax_child = get(curr_ax,'children'); %get handle to all the children in the figure
-curr_leg = findobj(curr(1),'type','legend'); % get handle to axes of figure
-copyobj(curr_ax_child,s1); %copy children to new parent axes i.e. the subplot axes
-legend(s1,curr_leg.String{1:3},'interpreter','none'); %copy children to new parent axes i.e. the subplot axes
+curr_ax = findall(curr(1),'type','axes');
+curr_ax_child = get(curr_ax,'children');
+curr_leg = findobj(curr(1),'type','legend');
+copyobj(curr_ax_child,s1);
+legend(s1,curr_leg.String{1:3},'interpreter','none'); 
 axis(s1,'tight')
 ylim(s1,[-10 10])
 PlotConstLine(0)
@@ -73,9 +73,9 @@ xlabel(s1,'time (s)')
 ylabel(s1,['turning ' char(176) '/s'])
 
 curr=findobj('type','figure','Name','T5 silenced & ctrls-bar plot');
-curr_ax = findall(curr(1),'type','axes'); % get handle to axes of figure
-curr_ax_child = get(curr_ax,'children'); %get handle to all the children in the figure
-copyobj(curr_ax_child,s2); %copy children to new parent axes i.e. the subplot axes
+curr_ax = findall(curr(1),'type','axes');
+curr_ax_child = get(curr_ax,'children');
+copyobj(curr_ax_child,s2); 
 ylim(s2,[-6 11])
 set(s2,'YTick',[-5 0 5  10]);
 set(s2,'YTickLabel',[-5 0 5  10]);

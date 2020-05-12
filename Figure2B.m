@@ -37,36 +37,36 @@ s3=subplot(1,4,3);
 s4=subplot(1,4,4);
 
 curr=findobj('type','figure','Name','fly 10 T4P ROIs');
-all_ax_fig1 = findall(curr,'type','axes'); % get handle to axes of figure
-all_children_ax_fig1 = get(all_ax_fig1,'children'); %get handle to all the children in the figure
-copyobj(all_children_ax_fig1{6},s1); %copy children to new parent axes i.e. the subplot axes
+all_ax_fig1 = findall(curr,'type','axes');
+all_children_ax_fig1 = get(all_ax_fig1,'children'); 
+copyobj(all_children_ax_fig1{6},s1);
 axis(s1,'tight')
 xlabel(s1,'time (s)')
 ylabel(s1,'^{\Delta f}/_{f}')
 title(s1,'example T4a ROI')
 
 curr=findobj('type','figure','Name','fly 8 T4R ROIs');
-all_ax_fig1 = findall(curr,'type','axes'); % get handle to axes of figure
-all_children_ax_fig1 = get(all_ax_fig1,'children'); %get handle to all the children in the figure
-copyobj(all_children_ax_fig1{3},s2); %copy children to new parent axes i.e. the subplot axes
+all_ax_fig1 = findall(curr,'type','axes');
+all_children_ax_fig1 = get(all_ax_fig1,'children'); 
+copyobj(all_children_ax_fig1{3},s2); 
 axis(s2,'tight')
 xlabel(s2,'time (s)')
 ylabel(s2,'^{\Delta f}/_{f}')
 title(s2,'example T4b ROI')
 
 curr=findobj('type','figure','Name','fly 7 T5P ROIs');
-all_ax_fig1 = findall(curr,'type','axes'); % get handle to axes of figure
-all_children_ax_fig1 = get(all_ax_fig1,'children'); %get handle to all the children in the figure
-copyobj(all_children_ax_fig1{3},s3); %copy children to new parent axes i.e. the subplot axes
+all_ax_fig1 = findall(curr,'type','axes');
+all_children_ax_fig1 = get(all_ax_fig1,'children'); 
+copyobj(all_children_ax_fig1{3},s3);
 axis(s3,'tight')
 xlabel(s3,'time (s)')
 ylabel(s3,'^{\Delta f}/_{f}')
 title(s3,'example T5a ROI')
 
 curr=findobj('type','figure','Name','fly 6 T5R ROIs');
-all_ax_fig1 = findall(curr,'type','axes'); % get handle to axes of figure
-all_children_ax_fig1 = get(all_ax_fig1,'children'); %get handle to all the children in the figure
-copyobj(all_children_ax_fig1{5},s4); %copy children to new parent axes i.e. the subplot axes
+all_ax_fig1 = findall(curr,'type','axes');
+all_children_ax_fig1 = get(all_ax_fig1,'children'); 
+copyobj(all_children_ax_fig1{5},s4);
 axis(s4,'tight')
 xlabel(s4,'time (s)')
 ylabel(s4,'^{\Delta f}/_{f}')

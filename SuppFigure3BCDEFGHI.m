@@ -35,12 +35,10 @@ numSingleBarStimsPerRow=1;
 numNonSingleBarStims=8;
 conditionNames{1}={'single white','white prog',...
     'black prog','white reg','black reg'};
-conditionNames{2}={'single white','white reg',...
-    'black reg','white prog','black prog'};
+conditionNames{2}=conditionNames{1};
 conditionNames{3}={'single black','black prog',...
     'white prog','black reg','white reg'};
-conditionNames{4}={'single black','black reg',...
-    'white reg','black prog','white prog'};
+conditionNames{4}=conditionNames{3};
 cenaMn=[];
 cenaSem=[];
 timeAveragedStimPres=[];
@@ -93,9 +91,9 @@ taxis = linspace(general_parameters.snipShift,...
     length(cenaMn{g}));
 taxis=taxis/1000;
 
-subp={'BC','DE','FG','HI'};
+subp={'BC','FG','DE','HI'};
 
-for g=1:length(output)
+for g=[1 3 2 4]
     MakeFigure('Name',['SuppFigure 3' subp{g}],'NumberTitle','off')
     switch g
         case {1,2}
@@ -105,7 +103,7 @@ for g=1:length(output)
             hold on
             axis tight
             xlabel('time (s)')
-            ylabel('^{\Delta f}/_{f}')
+            ylabel('^{\Delta F}/_{F}')
             title(cellTypes{g},'FontSize',16)
             ax=gca;
             set(ax,'XTick',[0 0.5 1 1.5])
@@ -117,7 +115,7 @@ for g=1:length(output)
             easyBar(timeAveragedStimPres{g},'FontSize',12,'conditionNames',...
                 conditionNames{g},'doSignrank',0,'colors',colors)
             xtickangle(45)
-            ylabel('^{\Delta f}/_{f}')
+            ylabel('^{\Delta F}/_{F}')
             
             switch g
                 case 1
@@ -151,7 +149,7 @@ for g=1:length(output)
             hold on
             axis tight
             xlabel('time (s)')
-            ylabel('^{\Delta f}/_{f}')
+            ylabel('^{\Delta F}/_{F}')
             title(cellTypes{g},'FontSize',16)
             ax=gca;
             set(ax,'XTick',[0 0.5 1 1.5])
@@ -164,7 +162,7 @@ for g=1:length(output)
             easyBar(timeAveragedStimPres{g},'FontSize',12,'conditionNames',...
                 conditionNames{g},'doSignrank',0,'colors',colors)
             xtickangle(45)
-            ylabel('^{\Delta f}/_{f}')
+            ylabel('^{\Delta F}/_{F}')
             
             switch g
                 case 3

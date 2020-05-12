@@ -115,7 +115,7 @@ for g=1:length(cTCombResps)
             hold on
             axis tight
             xlabel('time (s)')
-            ylabel('^{\Delta f}/_{f}')
+            ylabel('^{\Delta F}/_{F}')
             title('T4','FontSize',16)
             ax=gca;
             set(ax,'XTick',[0 0.5 1 1.5])
@@ -128,7 +128,7 @@ for g=1:length(cTCombResps)
                 conditionNames{g},'doSignrank',0,'colors',colors)
             title('T4','FontSize',16)
             xtickangle(45)
-            ylabel('^{\Delta f}/_{f}')
+            ylabel('^{\Delta F}/_{F}')
         case 2
             subplot(2,2,2*g-1)
             cenaMn{g}=cenaMn{g}(:,[1 3 2 5 4]);
@@ -138,7 +138,7 @@ for g=1:length(cTCombResps)
             hold on
             axis tight
             xlabel('time (s)')
-            ylabel('^{\Delta f}/_{f}')
+            ylabel('^{\Delta F}/_{F}')
             title('T5','FontSize',16)
             ax=gca;
             set(ax,'XTick',[0 0.5 1 1.5])
@@ -152,7 +152,7 @@ for g=1:length(cTCombResps)
                 conditionNames{g},'doSignrank',0,'colors',colors)
             title('T5','FontSize',16)
             xtickangle(45)
-            ylabel('^{\Delta f}/_{f}')
+            ylabel('^{\Delta F}/_{F}')
     end
     pairsToDoStats(1,:)=[1 2]; % single bar vs white prog bar
     pairsToDoStats(2,:)=[1 3]; % single bar vs black prog bar

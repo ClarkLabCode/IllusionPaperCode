@@ -47,10 +47,10 @@ s5 = subplot(1,12,8:9); % T5b response xt plot
 s6 = subplot(1,12,10:12); % time traces all cell types
 
 curr=findobj('type','figure','Name','Natural T4a');
-all_ax_fig1 = findall(curr,'type','axes'); % get handle to axes of figure
-all_children_ax_fig1 = get(all_ax_fig1,'children'); %get handle to all the children in the figure
+all_ax_fig1 = findall(curr,'type','axes'); 
+all_children_ax_fig1 = get(all_ax_fig1,'children'); 
 
-copyobj(all_children_ax_fig1{1},s1); %copy children to new parent axes i.e. the subplot axes
+copyobj(all_children_ax_fig1{1},s1);
 s1.XLim=all_ax_fig1(1).XLim;
 s1.YLim=all_ax_fig1(1).YLim;
 s1.YTick=[-numPhases/2 0 numPhases/2];
@@ -60,7 +60,7 @@ ylabel(s1,'stimulus position (deg)')
 xlabel(s1,'time(s)')
 title(s1,'stimulus','FontSize',12,'FontWeight','bold')
 
-copyobj(all_children_ax_fig1{3},s2); %copy children to new parent axes i.e. the subplot axes
+copyobj(all_children_ax_fig1{3},s2);
 s2.XLim=all_ax_fig1(3).XLim;
 s2.YLim=all_ax_fig1(3).YLim;
 colormap(s2,colormap(all_ax_fig1(3)));
@@ -74,19 +74,19 @@ l=findobj(all_children_ax_fig1{2},'Type','Line');
 l.Color=[0 0 0];
 p=findobj(all_children_ax_fig1{2},'Type','Patch');
 p.FaceColor=[0 0 0];
-copyobj(all_children_ax_fig1{2},s6); %copy children to new parent axes i.e. the subplot axes
+copyobj(all_children_ax_fig1{2},s6); 
 s6.XLim=all_ax_fig1(2).XLim;
 s6.YLim=all_ax_fig1(2).YLim;
 s6.XTick=[];
 view(s6,90, -90)
-ylabel(s6,'^{\Delta f}/_{f}')
+ylabel(s6,'^{\Delta F}/_{F}')
 hold(s6,'on')
 
 curr=findobj('type','figure','Name','Natural T4b');
-all_ax_fig1 = findall(curr,'type','axes'); % get handle to axes of figure
-all_children_ax_fig1 = get(all_ax_fig1,'children'); %get handle to all the children in the figure
+all_ax_fig1 = findall(curr,'type','axes'); 
+all_children_ax_fig1 = get(all_ax_fig1,'children'); 
 
-copyobj(all_children_ax_fig1{3},s3); %copy children to new parent axes i.e. the subplot axes
+copyobj(all_children_ax_fig1{3},s3);
 s3.XLim=all_ax_fig1(3).XLim;
 s3.YLim=all_ax_fig1(3).YLim;
 colormap(s3,colormap(all_ax_fig1(3)));
@@ -101,18 +101,18 @@ l.Color=[1 0 0];
 p=findobj(all_children_ax_fig1{2},'Type','Patch');
 p.FaceColor=[1 0 0];
 
-copyobj(all_children_ax_fig1{2},s6); %copy children to new parent axes i.e. the subplot axes
+copyobj(all_children_ax_fig1{2},s6);
 s6.XLim=all_ax_fig1(2).XLim;
 s6.YLim=all_ax_fig1(2).YLim;
 s6.XTick=[];
-ylabel(s6,'^{\Delta f}/_{f}')
+ylabel(s6,'^{\Delta F}/_{F}')
 hold(s6,'on')
 
 curr=findobj('type','figure','Name','Natural T5a');
-all_ax_fig1 = findall(curr,'type','axes'); % get handle to axes of figure
-all_children_ax_fig1 = get(all_ax_fig1,'children'); %get handle to all the children in the figure
+all_ax_fig1 = findall(curr,'type','axes');
+all_children_ax_fig1 = get(all_ax_fig1,'children'); 
 
-copyobj(all_children_ax_fig1{3},s4); %copy children to new parent axes i.e. the subplot axes
+copyobj(all_children_ax_fig1{3},s4); 
 s4.XLim=all_ax_fig1(3).XLim;
 s4.YLim=all_ax_fig1(3).YLim;
 colormap(s4,colormap(all_ax_fig1(3)));
@@ -126,18 +126,18 @@ l=findobj(all_children_ax_fig1{2},'Type','Line');
 l.Color=[0 1 0];
 p=findobj(all_children_ax_fig1{2},'Type','Patch');
 p.FaceColor=[0 1 0];
-copyobj(all_children_ax_fig1{2},s6); %copy children to new parent axes i.e. the subplot axes
+copyobj(all_children_ax_fig1{2},s6);
 s6.XLim=all_ax_fig1(2).XLim;
 s6.YLim=all_ax_fig1(2).YLim;
 s6.XTick=[];
-ylabel(s6,'^{\Delta f}/_{f}')
+ylabel(s6,'^{\Delta F}/_{F}')
 hold(s6,'on')
 
 curr=findobj('type','figure','Name','Natural T5b');
-all_ax_fig1 = findall(curr,'type','axes'); % get handle to axes of figure
-all_children_ax_fig1 = get(all_ax_fig1,'children'); %get handle to all the children in the figure
+all_ax_fig1 = findall(curr,'type','axes');
+all_children_ax_fig1 = get(all_ax_fig1,'children'); 
 
-copyobj(all_children_ax_fig1{3},s5); %copy children to new parent axes i.e. the subplot axes
+copyobj(all_children_ax_fig1{3},s5);
 s5.XLim=all_ax_fig1(3).XLim;
 s5.YLim=all_ax_fig1(3).YLim;
 colormap(s5,colormap(all_ax_fig1(3)));
@@ -151,11 +151,11 @@ l=findobj(all_children_ax_fig1{2},'Type','Line');
 l.Color=[0 0 1];
 p=findobj(all_children_ax_fig1{2},'Type','Patch');
 p.FaceColor=[0 0 1];
-copyobj(all_children_ax_fig1{2},s6); %copy children to new parent axes i.e. the subplot axes
+copyobj(all_children_ax_fig1{2},s6);
 s6.XLim=all_ax_fig1(2).XLim;
 s6.YLim=all_ax_fig1(2).YLim;
 s6.XTick=[];
-ylabel(s6,'^{\Delta f}/_{f}')
+ylabel(s6,'^{\Delta F}/_{F}')
 hold(s6,'on')
 a=legend(cellTypes);
 a.Position=a.Position+[0.01 0 0 0];

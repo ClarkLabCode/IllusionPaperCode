@@ -54,10 +54,10 @@ s11 = subplot(1,12,11); % T5b response xt plot
 s12 = subplot(1,12,12); % T5b response time averaged
 
 curr=findobj('type','figure','Name','Edges T4a');
-all_ax_fig1 = findall(curr,'type','axes'); % get handle to axes of figure
-all_children_ax_fig1 = get(all_ax_fig1,'children'); %get handle to all the children in the figure
+all_ax_fig1 = findall(curr,'type','axes'); 
+all_children_ax_fig1 = get(all_ax_fig1,'children'); 
 
-copyobj(all_children_ax_fig1{5},s1); %copy children to new parent axes i.e. the subplot axes
+copyobj(all_children_ax_fig1{5},s1);
 s1.XLim=all_ax_fig1(5).XLim;
 s1.YLim=all_ax_fig1(5).YLim;
 s1.YTick=[-numPhases/2 0 numPhases/2];
@@ -67,7 +67,7 @@ ylabel(s1,{'offset from', 'RF center (deg)'})
 xlabel(s1,'time(s)')
 title(s1,'stimulus','FontSize',12,'FontWeight','bold')
 
-copyobj(all_children_ax_fig1{10},s2); %copy children to new parent axes i.e. the subplot axes
+copyobj(all_children_ax_fig1{10},s2);
 s2.XLim=all_ax_fig1(10).XLim;
 s2.YLim=all_ax_fig1(10).YLim;
 colormap(s2,colormap(all_ax_fig1(10)));
@@ -80,10 +80,10 @@ title(s2,'T4a','FontSize',12,'FontWeight','bold')
 
 
 curr=findobj('type','figure','Name','Edges T4b');
-all_ax_fig1 = findall(curr,'type','axes'); % get handle to axes of figure
-all_children_ax_fig1 = get(all_ax_fig1,'children'); %get handle to all the children in the figure
+all_ax_fig1 = findall(curr,'type','axes');
+all_children_ax_fig1 = get(all_ax_fig1,'children');
 
-copyobj(all_children_ax_fig1{5},s4); %copy children to new parent axes i.e. the subplot axes
+copyobj(all_children_ax_fig1{5},s4);
 s4.XLim=all_ax_fig1(5).XLim;
 s4.YLim=all_ax_fig1(5).YLim;
 s4.YTick=[-numPhases/2 0 numPhases/2];
@@ -92,7 +92,7 @@ colormap(s4,'gray')
 xlabel(s4,'time(s)')
 title(s4,'stimulus','FontSize',12,'FontWeight','bold')
 
-copyobj(all_children_ax_fig1{10},s5); %copy children to new parent axes i.e. the subplot axes
+copyobj(all_children_ax_fig1{10},s5);
 s5.XLim=all_ax_fig1(10).XLim;
 s5.YLim=all_ax_fig1(10).YLim;
 colormap(s5,colormap(all_ax_fig1(10)));
@@ -105,10 +105,10 @@ title(s5,'T4b','FontSize',12,'FontWeight','bold')
 
 
 curr=findobj('type','figure','Name','Edges T5a');
-all_ax_fig1 = findall(curr,'type','axes'); % get handle to axes of figure
-all_children_ax_fig1 = get(all_ax_fig1,'children'); %get handle to all the children in the figure
+all_ax_fig1 = findall(curr,'type','axes');
+all_children_ax_fig1 = get(all_ax_fig1,'children'); 
 
-copyobj(all_children_ax_fig1{5},s7); %copy children to new parent axes i.e. the subplot axes
+copyobj(all_children_ax_fig1{5},s7);
 s7.XLim=all_ax_fig1(5).XLim;
 s7.YLim=all_ax_fig1(5).YLim;
 s7.YTick=[-numPhases/2 0 numPhases/2];
@@ -117,7 +117,7 @@ colormap(s7,'gray')
 xlabel(s7,'time(s)')
 title(s7,'stimulus','FontSize',12,'FontWeight','bold')
 
-copyobj(all_children_ax_fig1{10},s8); %copy children to new parent axes i.e. the subplot axes
+copyobj(all_children_ax_fig1{10},s8);
 s8.XLim=all_ax_fig1(10).XLim;
 s8.YLim=all_ax_fig1(10).YLim;
 colormap(s8,colormap(all_ax_fig1(10)));
@@ -130,10 +130,10 @@ title(s8,'T5a','FontSize',12,'FontWeight','bold')
 
 
 curr=findobj('type','figure','Name','Edges T5b');
-all_ax_fig1 = findall(curr,'type','axes'); % get handle to axes of figure
-all_children_ax_fig1 = get(all_ax_fig1,'children'); %get handle to all the children in the figure
+all_ax_fig1 = findall(curr,'type','axes'); 
+all_children_ax_fig1 = get(all_ax_fig1,'children'); 
 
-copyobj(all_children_ax_fig1{5},s10); %copy children to new parent axes i.e. the subplot axes
+copyobj(all_children_ax_fig1{5},s10); 
 s10.XLim=all_ax_fig1(5).XLim;
 s10.YLim=all_ax_fig1(5).YLim;
 s10.YTick=[-numPhases/2 0 numPhases/2];
@@ -142,7 +142,7 @@ colormap(s10,'gray')
 xlabel(s10,'time(s)')
 title(s10,'stimulus','FontSize',12,'FontWeight','bold')
 
-copyobj(all_children_ax_fig1{10},s11); %copy children to new parent axes i.e. the subplot axes
+copyobj(all_children_ax_fig1{10},s11);
 s11.XLim=all_ax_fig1(10).XLim;
 s11.YLim=all_ax_fig1(10).YLim;
 colormap(s11,colormap(all_ax_fig1(10)));
@@ -153,13 +153,13 @@ colorbar(s11);
 xlabel(s11,'time(s)')
 title(s11,'T5b','FontSize',12,'FontWeight','bold')
 
-% time tracees
+% time traces
 
 curr=findobj('type','figure','Name','Edges time avg T4a');
-all_ax_fig5 = findall(curr,'type','axes'); % get handle to axes of figure
-all_children_ax_fig5 = get(all_ax_fig5,'children'); %get handle to all the children in the figure
+all_ax_fig5 = findall(curr,'type','axes');
+all_children_ax_fig5 = get(all_ax_fig5,'children'); 
 
-copyobj(all_children_ax_fig5{10},s3); %copy children to new parent axes i.e. the subplot axes
+copyobj(all_children_ax_fig5{10},s3);
 s3.XLim=all_ax_fig5(10).XLim;
 s3.YLim=all_ax_fig5(10).YLim;
 s3.XTick=[];
@@ -167,10 +167,10 @@ view(s3,90, -90)
 ylabel(s3,'^{\Delta f}/_{f}')
 
 curr=findobj('type','figure','Name','Edges time avg T4b');
-all_ax_fig5 = findall(curr,'type','axes'); % get handle to axes of figure
-all_children_ax_fig5 = get(all_ax_fig5,'children'); %get handle to all the children in the figure
+all_ax_fig5 = findall(curr,'type','axes');
+all_children_ax_fig5 = get(all_ax_fig5,'children');
 
-copyobj(all_children_ax_fig5{10},s6); %copy children to new parent axes i.e. the subplot axes
+copyobj(all_children_ax_fig5{10},s6);
 s6.XLim=all_ax_fig5(10).XLim;
 s6.YLim=all_ax_fig5(10).YLim;
 s6.XTick=[];
@@ -178,10 +178,10 @@ view(s6,90, -90)
 ylabel(s6,'^{\Delta f}/_{f}')
 
 curr=findobj('type','figure','Name','Edges time avg T5a');
-all_ax_fig5 = findall(curr,'type','axes'); % get handle to axes of figure
-all_children_ax_fig5 = get(all_ax_fig5,'children'); %get handle to all the children in the figure
+all_ax_fig5 = findall(curr,'type','axes');
+all_children_ax_fig5 = get(all_ax_fig5,'children');
 
-copyobj(all_children_ax_fig5{10},s9); %copy children to new parent axes i.e. the subplot axes
+copyobj(all_children_ax_fig5{10},s9);
 s9.XLim=all_ax_fig5(10).XLim;
 s9.YLim=all_ax_fig5(10).YLim;
 s9.XTick=[];
@@ -189,10 +189,10 @@ view(s9,90, -90)
 ylabel(s9,'^{\Delta f}/_{f}')
 
 curr=findobj('type','figure','Name','Edges time avg T5b');
-all_ax_fig5 = findall(curr,'type','axes'); % get handle to axes of figure
-all_children_ax_fig5 = get(all_ax_fig5,'children'); %get handle to all the children in the figure
+all_ax_fig5 = findall(curr,'type','axes');
+all_children_ax_fig5 = get(all_ax_fig5,'children');
 
-copyobj(all_children_ax_fig5{10},s12); %copy children to new parent axes i.e. the subplot axes
+copyobj(all_children_ax_fig5{10},s12);
 s12.XLim=all_ax_fig5(10).XLim;
 s12.YLim=all_ax_fig5(10).YLim;
 s12.XTick=[];
