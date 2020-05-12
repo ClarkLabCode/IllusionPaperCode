@@ -78,7 +78,7 @@ copyobj(all_children_ax_fig1{2},s1);
 s1.XLim=all_ax_fig1(2).XLim;
 s1.YLim=all_ax_fig1(2).YLim;
 s1.YTick=[-numPhases/4 -numPhases/8 0 numPhases/8 numPhases/4];
-s1.YTickLabel=[-numPhases/4 -numPhases/8 0 numPhases/8 numPhases/4]*barWidth;
+s1.YTickLabel=[-numPhases/2 -numPhases/4 0 numPhases/4 numPhases/2]*barWidth;
 ylabel(s1,{'offset from', 'RF center (deg)'})
 xlabel(s1,'time(s)')
 title(s1,'stimulus','FontSize',12,'FontWeight','bold')
@@ -98,7 +98,7 @@ copyobj(all_children_ax_fig1{1},s6);
 s6.XLim=all_ax_fig1(1).XLim;
 s6.YLim=all_ax_fig1(1).YLim;
 s6.YTick=[-numPhases/4 -numPhases/8 0 numPhases/8 numPhases/4];
-s6.YTickLabel=[-numPhases/4 -numPhases/8 0 numPhases/8 numPhases/4]*barWidth;
+s6.YTickLabel=[-numPhases/2 -numPhases/4 0 numPhases/4 numPhases/2]*barWidth;
 ylabel(s6,{'offset from', 'RF center (deg)'})
 xlabel(s6,'time(s)')
 
