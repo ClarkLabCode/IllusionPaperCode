@@ -13,6 +13,10 @@ end
 subRows = 2;
 colsPerRow = 10;
 
+for ii = 1:2:length(varargin)
+    eval([varargin{ii} '= varargin{' num2str(ii+1) '};']);
+end
+
 numTimePoints = size(roiSummaryMatrix, 2);
 tVals = linspace(timeShift, timeShift+duration,numTimePoints);
 

@@ -10,6 +10,10 @@ colsPerRow = 10;
 
 phasesPerBar = paramsPlot.barWd/paramsPlot.phaseShift;
 
+for ii = 1:2:length(varargin)
+    eval([varargin{ii} '= varargin{' num2str(ii+1) '};']);
+end
+
 numTimePoints = size(roiSummaryMatrix, 2);
 tVals = linspace(timeShift, timeShift+duration,numTimePoints);
 
