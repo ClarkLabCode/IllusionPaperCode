@@ -75,7 +75,7 @@ ylabel(s1,['turning ' char(176) '/s'])
 curr=findobj('type','figure','Name','T4 silenced & ctrls-bar plot');
 curr_ax = findall(curr(1),'type','axes');
 curr_ax_child = get(curr_ax,'children');
-copyobj(curr_ax_child,s2); s
+copyobj(curr_ax_child,s2);
 ylim(s2,[-6 11])
 set(s2,'YTick',[-5 0 5  10]);
 set(s2,'YTickLabel',[-5 0 5  10]);

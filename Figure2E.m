@@ -271,7 +271,7 @@ s6.XTick=[];
 view(s6,90, -90)
 ylabel(s6,'^{\Delta F}/_{F}')
 
-copyobj(all_children_ax_fig6{8},s18); s
+copyobj(all_children_ax_fig6{8},s18);
 s18.XLim=all_ax_fig6(8).XLim;
 s18.YLim=all_ax_fig6(8).YLim;
 s18.XTick=[];

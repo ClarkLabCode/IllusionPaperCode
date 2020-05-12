@@ -177,7 +177,7 @@ view(s6,90, -90)
 ylabel(s6,'^{\Delta F}/_{F}')
 
 curr=findobj('type','figure','Name','Edges time avg T5a');
-all_ax_fig5 = findall(curr,'type','axes');e
+all_ax_fig5 = findall(curr,'type','axes');
 all_children_ax_fig5 = get(all_ax_fig5,'children'); 
 
 copyobj(all_children_ax_fig5{10},s9);
