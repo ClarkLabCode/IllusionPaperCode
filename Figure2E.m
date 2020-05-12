@@ -70,10 +70,10 @@ s23 = subplot(2,12,23); % stim
 s24 = subplot(2,12,24); % T4 response to black bar time averaged
 
 curr=findobj('type','figure','Name','Edges T4a');
-all_ax_fig1 = findall(curr,'type','axes'); 
+all_ax_fig1 = findall(curr,'type','axes');
 all_children_ax_fig1 = get(all_ax_fig1,'children'); 
 
-copyobj(all_children_ax_fig1{4},s1); 
+copyobj(all_children_ax_fig1{4},s1);
 s1.XLim=all_ax_fig1(4).XLim;
 s1.YLim=all_ax_fig1(4).YLim;
 s1.YTick=[-numPhases/2 0 numPhases/2];
@@ -83,7 +83,7 @@ ylabel(s1,{'stimulus','location (deg)'})
 xlabel(s1,'time(s)')
 title(s1,'stimulus','FontSize',12,'FontWeight','bold')
 
-copyobj(all_children_ax_fig1{9},s2); 
+copyobj(all_children_ax_fig1{9},s2);
 s2.XLim=all_ax_fig1(9).XLim;
 s2.YLim=all_ax_fig1(9).YLim;
 colormap(s2,colormap(all_ax_fig1(9)));
@@ -103,7 +103,7 @@ colormap(s13,'gray')
 ylabel(s13,{'stimulus','location (deg)'})
 xlabel(s13,'time(s)')
 
-copyobj(all_children_ax_fig1{8},s14);
+copyobj(all_children_ax_fig1{8},s14); 
 s14.XLim=all_ax_fig1(8).XLim;
 s14.YLim=all_ax_fig1(8).YLim;
 colormap(s14,colormap(all_ax_fig1(8)));
@@ -117,8 +117,7 @@ xlabel(s14,'time(s)')
 
 curr=findobj('type','figure','Name','Edges T4b');
 all_ax_fig2 = findall(curr,'type','axes');
-all_children_ax_fig2 = get(all_ax_fig2,'children'); 
-
+all_children_ax_fig2 = get(all_ax_fig2,'children');
 copyobj(all_children_ax_fig2{4},s4); 
 s4.XLim=all_ax_fig2(4).XLim;
 s4.YLim=all_ax_fig2(4).YLim;
